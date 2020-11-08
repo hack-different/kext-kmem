@@ -3,17 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		C92FDABA25577ED700EE805F /* kmem.c in Sources */ = {isa = PBXBuildFile; fileRef = C92FDAB925577ED700EE805F /* kmem.c */; };
+		C92FDAC425577FC100EE805F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C92FDAC325577FC100EE805F /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C92FDAB625577ED700EE805F /* kmem.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kmem.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92FDAB925577ED700EE805F /* kmem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kmem.c; sourceTree = "<group>"; };
 		C92FDABB25577ED700EE805F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C92FDAC325577FC100EE805F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +32,7 @@
 		C92FDAAC25577ED700EE805F = {
 			isa = PBXGroup;
 			children = (
+				C92FDAC325577FC100EE805F /* README.md */,
 				C92FDAB825577ED700EE805F /* kmem */,
 				C92FDAB725577ED700EE805F /* Products */,
 			);
@@ -97,7 +100,7 @@
 				};
 			};
 			buildConfigurationList = C92FDAB025577ED700EE805F /* Build configuration list for PBXProject "kmem" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -119,6 +122,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92FDAC425577FC100EE805F /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
