@@ -2,20 +2,13 @@
 //  kmem.c
 //  kmem
 //
-//  Created by Rick Mark on 11/7/20.
+//  Created by Rick Mark on 11/8/20.
 //
 
-#include <mach/mach_types.h>
+#include "kmem.h"
 
-kern_return_t kmem_start(kmod_info_t * ki, void *d);
-kern_return_t kmem_stop(kmod_info_t *ki, void *d);
+const char* kIOKernelMemoryApeture = "IOKernelMemoryApeture";
+const char* kIOKernelMemoryUserClient = "IOKernelMemoryUserClient";
 
-kern_return_t kmem_start(kmod_info_t * ki, void *d)
-{
-    return KERN_SUCCESS;
-}
+const uint32_t kIOKernelMemoryApetureDefault = 0;
 
-kern_return_t kmem_stop(kmod_info_t *ki, void *d)
-{
-    return KERN_SUCCESS;
-}

@@ -3,79 +3,154 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C92FDABA25577ED700EE805F /* kmem.c in Sources */ = {isa = PBXBuildFile; fileRef = C92FDAB925577ED700EE805F /* kmem.c */; };
-		C92FDAC425577FC100EE805F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C92FDAC325577FC100EE805F /* README.md */; };
+		C95E08862558AF2D007E6B1C /* kmem.h in Headers */ = {isa = PBXBuildFile; fileRef = C95E08852558AF2D007E6B1C /* kmem.h */; };
+		C95E088B2558AF53007E6B1C /* IOKernelMemoryUserClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C95E08892558AF53007E6B1C /* IOKernelMemoryUserClient.cpp */; };
+		C95E088C2558AF53007E6B1C /* IOKernelMemoryUserClient.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C95E088A2558AF53007E6B1C /* IOKernelMemoryUserClient.hpp */; };
+		C95E08AF2558B994007E6B1C /* kmem.c in Sources */ = {isa = PBXBuildFile; fileRef = C95E08AE2558B994007E6B1C /* kmem.c */; };
+		C971686D255898070087FAD6 /* IOKernelMemoryApeture.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C971686C255898070087FAD6 /* IOKernelMemoryApeture.hpp */; };
+		C971686F255898070087FAD6 /* IOKernelMemoryApeture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C971686E255898070087FAD6 /* IOKernelMemoryApeture.cpp */; };
+		C9716880255898DC0087FAD6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C971687F255898DC0087FAD6 /* main.cpp */; };
+		C971688725589B870087FAD6 /* kmem_api.h in Headers */ = {isa = PBXBuildFile; fileRef = C971688625589B870087FAD6 /* kmem_api.h */; };
+		C971688C2558A3000087FAD6 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C971688B2558A3000087FAD6 /* IOKit.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C971687B255898DC0087FAD6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		C92FDAB625577ED700EE805F /* kmem.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kmem.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		C92FDAB925577ED700EE805F /* kmem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kmem.c; sourceTree = "<group>"; };
-		C92FDABB25577ED700EE805F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C92FDAC325577FC100EE805F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C95E08852558AF2D007E6B1C /* kmem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kmem.h; sourceTree = "<group>"; };
+		C95E08892558AF53007E6B1C /* IOKernelMemoryUserClient.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IOKernelMemoryUserClient.cpp; sourceTree = "<group>"; };
+		C95E088A2558AF53007E6B1C /* IOKernelMemoryUserClient.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IOKernelMemoryUserClient.hpp; sourceTree = "<group>"; };
+		C95E08A92558B582007E6B1C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C95E08AE2558B994007E6B1C /* kmem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kmem.c; sourceTree = "<group>"; };
+		C9716869255898070087FAD6 /* kmem.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kmem.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		C971686C255898070087FAD6 /* IOKernelMemoryApeture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IOKernelMemoryApeture.hpp; sourceTree = "<group>"; };
+		C971686E255898070087FAD6 /* IOKernelMemoryApeture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IOKernelMemoryApeture.cpp; sourceTree = "<group>"; };
+		C9716870255898070087FAD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9716878255898BA0087FAD6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C971687D255898DC0087FAD6 /* kmemclient */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = kmemclient; sourceTree = BUILT_PRODUCTS_DIR; };
+		C971687F255898DC0087FAD6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C971688625589B870087FAD6 /* kmem_api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kmem_api.h; sourceTree = "<group>"; };
+		C971688B2558A3000087FAD6 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C92FDAB325577ED700EE805F /* Frameworks */ = {
+		C9716866255898070087FAD6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C971687A255898DC0087FAD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C971688C2558A3000087FAD6 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C92FDAAC25577ED700EE805F = {
+		C971685F255898070087FAD6 = {
 			isa = PBXGroup;
 			children = (
-				C92FDAC325577FC100EE805F /* README.md */,
-				C92FDAB825577ED700EE805F /* kmem */,
-				C92FDAB725577ED700EE805F /* Products */,
+				C95E08A92558B582007E6B1C /* README.md */,
+				C9716877255898A40087FAD6 /* kmemclient */,
+				C971686B255898070087FAD6 /* kmem */,
+				C971687E255898DC0087FAD6 /* kmemclient */,
+				C971686A255898070087FAD6 /* Products */,
+				C971688A2558A3000087FAD6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		C92FDAB725577ED700EE805F /* Products */ = {
+		C971686A255898070087FAD6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C92FDAB625577ED700EE805F /* kmem.kext */,
+				C9716869255898070087FAD6 /* kmem.kext */,
+				C971687D255898DC0087FAD6 /* kmemclient */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C92FDAB825577ED700EE805F /* kmem */ = {
+		C971686B255898070087FAD6 /* kmem */ = {
 			isa = PBXGroup;
 			children = (
-				C92FDAB925577ED700EE805F /* kmem.c */,
-				C92FDABB25577ED700EE805F /* Info.plist */,
+				C971686C255898070087FAD6 /* IOKernelMemoryApeture.hpp */,
+				C971686E255898070087FAD6 /* IOKernelMemoryApeture.cpp */,
+				C9716870255898070087FAD6 /* Info.plist */,
+				C971688625589B870087FAD6 /* kmem_api.h */,
+				C95E08852558AF2D007E6B1C /* kmem.h */,
+				C95E08892558AF53007E6B1C /* IOKernelMemoryUserClient.cpp */,
+				C95E088A2558AF53007E6B1C /* IOKernelMemoryUserClient.hpp */,
+				C95E08AE2558B994007E6B1C /* kmem.c */,
 			);
 			path = kmem;
+			sourceTree = "<group>";
+		};
+		C9716877255898A40087FAD6 /* kmemclient */ = {
+			isa = PBXGroup;
+			children = (
+				C9716878255898BA0087FAD6 /* main.cpp */,
+			);
+			path = kmemclient;
+			sourceTree = "<group>";
+		};
+		C971687E255898DC0087FAD6 /* kmemclient */ = {
+			isa = PBXGroup;
+			children = (
+				C971687F255898DC0087FAD6 /* main.cpp */,
+			);
+			path = kmemclient;
+			sourceTree = "<group>";
+		};
+		C971688A2558A3000087FAD6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C971688B2558A3000087FAD6 /* IOKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		C92FDAB125577ED700EE805F /* Headers */ = {
+		C9716864255898070087FAD6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C971686D255898070087FAD6 /* IOKernelMemoryApeture.hpp in Headers */,
+				C95E08862558AF2D007E6B1C /* kmem.h in Headers */,
+				C95E088C2558AF53007E6B1C /* IOKernelMemoryUserClient.hpp in Headers */,
+				C971688725589B870087FAD6 /* kmem_api.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C92FDAB525577ED700EE805F /* kmem */ = {
+		C9716868255898070087FAD6 /* kmem */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C92FDABE25577ED700EE805F /* Build configuration list for PBXNativeTarget "kmem" */;
+			buildConfigurationList = C9716873255898070087FAD6 /* Build configuration list for PBXNativeTarget "kmem" */;
 			buildPhases = (
-				C92FDAB125577ED700EE805F /* Headers */,
-				C92FDAB225577ED700EE805F /* Sources */,
-				C92FDAB325577ED700EE805F /* Frameworks */,
-				C92FDAB425577ED700EE805F /* Resources */,
+				C9716864255898070087FAD6 /* Headers */,
+				C9716865255898070087FAD6 /* Sources */,
+				C9716866255898070087FAD6 /* Frameworks */,
+				C9716867255898070087FAD6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -83,64 +158,94 @@
 			);
 			name = kmem;
 			productName = kmem;
-			productReference = C92FDAB625577ED700EE805F /* kmem.kext */;
+			productReference = C9716869255898070087FAD6 /* kmem.kext */;
 			productType = "com.apple.product-type.kernel-extension";
+		};
+		C971687C255898DC0087FAD6 /* kmemclient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9716881255898DC0087FAD6 /* Build configuration list for PBXNativeTarget "kmemclient" */;
+			buildPhases = (
+				C9716879255898DC0087FAD6 /* Sources */,
+				C971687A255898DC0087FAD6 /* Frameworks */,
+				C971687B255898DC0087FAD6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = kmemclient;
+			productName = kmemclient;
+			productReference = C971687D255898DC0087FAD6 /* kmemclient */;
+			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C92FDAAD25577ED700EE805F /* Project object */ = {
+		C9716860255898070087FAD6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
-					C92FDAB525577ED700EE805F = {
+					C9716868255898070087FAD6 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					C971687C255898DC0087FAD6 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
 			};
-			buildConfigurationList = C92FDAB025577ED700EE805F /* Build configuration list for PBXProject "kmem" */;
-			compatibilityVersion = "Xcode 12.0";
+			buildConfigurationList = C9716863255898070087FAD6 /* Build configuration list for PBXProject "kmem" */;
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = C92FDAAC25577ED700EE805F;
-			productRefGroup = C92FDAB725577ED700EE805F /* Products */;
+			mainGroup = C971685F255898070087FAD6;
+			productRefGroup = C971686A255898070087FAD6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C92FDAB525577ED700EE805F /* kmem */,
+				C9716868255898070087FAD6 /* kmem */,
+				C971687C255898DC0087FAD6 /* kmemclient */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C92FDAB425577ED700EE805F /* Resources */ = {
+		C9716867255898070087FAD6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C92FDAC425577FC100EE805F /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C92FDAB225577ED700EE805F /* Sources */ = {
+		C9716865255898070087FAD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C92FDABA25577ED700EE805F /* kmem.c in Sources */,
+				C95E08AF2558B994007E6B1C /* kmem.c in Sources */,
+				C971686F255898070087FAD6 /* IOKernelMemoryApeture.cpp in Sources */,
+				C95E088B2558AF53007E6B1C /* IOKernelMemoryUserClient.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9716879255898DC0087FAD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9716880255898DC0087FAD6 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		C92FDABC25577ED700EE805F /* Debug */ = {
+		C9716871255898070087FAD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -199,7 +304,7 @@
 			};
 			name = Debug;
 		};
-		C92FDABD25577ED700EE805F /* Release */ = {
+		C9716872255898070087FAD6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -251,66 +356,105 @@
 			};
 			name = Release;
 		};
-		C92FDABF25577ED700EE805F /* Debug */ = {
+		C9716874255898070087FAD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0d1;
 				DEVELOPMENT_TEAM = DWVXMLB45Y;
 				INFOPLIST_FILE = kmem/Info.plist;
+				INSTALL_GROUP = root;
+				INSTALL_OWNER = root;
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MODULE_NAME = me.rickmark.kmem;
-				MODULE_START = kmem_start;
-				MODULE_STOP = kmem_stop;
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.rickmark.kmem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = Debug;
 		};
-		C92FDAC025577ED700EE805F /* Release */ = {
+		C9716875255898070087FAD6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0d1;
 				DEVELOPMENT_TEAM = DWVXMLB45Y;
 				INFOPLIST_FILE = kmem/Info.plist;
+				INSTALL_GROUP = root;
+				INSTALL_OWNER = root;
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MODULE_NAME = me.rickmark.kmem;
-				MODULE_START = kmem_start;
-				MODULE_STOP = kmem_stop;
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.rickmark.kmem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				WRAPPER_EXTENSION = kext;
+			};
+			name = Release;
+		};
+		C9716882255898DC0087FAD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DWVXMLB45Y;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C9716883255898DC0087FAD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DWVXMLB45Y;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C92FDAB025577ED700EE805F /* Build configuration list for PBXProject "kmem" */ = {
+		C9716863255898070087FAD6 /* Build configuration list for PBXProject "kmem" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C92FDABC25577ED700EE805F /* Debug */,
-				C92FDABD25577ED700EE805F /* Release */,
+				C9716871255898070087FAD6 /* Debug */,
+				C9716872255898070087FAD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C92FDABE25577ED700EE805F /* Build configuration list for PBXNativeTarget "kmem" */ = {
+		C9716873255898070087FAD6 /* Build configuration list for PBXNativeTarget "kmem" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C92FDABF25577ED700EE805F /* Debug */,
-				C92FDAC025577ED700EE805F /* Release */,
+				C9716874255898070087FAD6 /* Debug */,
+				C9716875255898070087FAD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9716881255898DC0087FAD6 /* Build configuration list for PBXNativeTarget "kmemclient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9716882255898DC0087FAD6 /* Debug */,
+				C9716883255898DC0087FAD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C92FDAAD25577ED700EE805F /* Project object */;
+	rootObject = C9716860255898070087FAD6 /* Project object */;
 }
