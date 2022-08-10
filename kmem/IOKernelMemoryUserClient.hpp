@@ -40,6 +40,12 @@ protected:
 
     static IOReturn actionMethodReadVirtual(IOKernelMemoryApetureUserClient *target, void *reference, IOExternalMethodArguments *arguments);
     static IOReturn actionMethodReadPhysical(IOKernelMemoryApetureUserClient *target, void *reference,IOExternalMethodArguments *arguments);
+
+    virtual IOReturn methodHeaderAddress(IOExternalMethodArguments *arguments);
+    virtual IOReturn methodCodeAddress(IOExternalMethodArguments *arguments);
+
+    static IOReturn actionMethodHeaderAddress(IOKernelMemoryApetureUserClient *target, void *reference, IOExternalMethodArguments *arguments);
+    static IOReturn actionMethodCodeAddress(IOKernelMemoryApetureUserClient *target, void *reference,IOExternalMethodArguments *arguments);
 private:
     /**
      *  Method dispatch table.

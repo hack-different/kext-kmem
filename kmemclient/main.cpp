@@ -72,7 +72,32 @@ int main(int argc, const char * argv[]) {
         std::cerr << "Could not open the IOKernelMemoryApeture\n";
         return -3;
     }
+
+    outputCount = 1;
+    kern_return_t hdrResult = IOConnectCallScalarMethod(connection, kIOKernelMemoryApetureMethodGetKextHeaderAddress, nullptr, 0, output, &outputCount);
+    if (hdrResult != KERN_SUCCESS) {
+        char hexError[16];
+        sprintf(hexError, "0x%X", hdrResult);
+        std::cerr << "Unable to invoke hdr addr operation on the IOService: " << hexError << "\n";
+        return -5;
+    } else {
+        printf("kext header address: %p\n", (void*)output[0]);
+    }
+
+    outputCount = 1;
+    kern_return_t codeResult = IOConnectCallScalarMethod(connection, kIOKernelMemoryApetureMethodGetKextCodeAddress, nullptr, 0, output, &outputCount);
+    if (codeResult != KERN_SUCCESS) {
+        char hexError[16];
+        sprintf(hexError, "0x%X", hdrResult);
+        std::cerr << "Unable to invoke code addr operation on the IOService: " << hexError << "\n";
+        return -5;
+    } else {
+        printf("code header address: %p\n", (void*)output[0]);
+    }
+
+#if 1
     
+    outputCount = 8;
     void* outputBuffer = malloc(targetSize);
     if (!outputBuffer) {
         std::cerr << "Could not allocate user mode buffer with sufficant size.\n";
@@ -82,7 +107,7 @@ int main(int argc, const char * argv[]) {
     memset(outputBuffer, 0x00, targetSize);
     fprintf(stderr, "user mode buffer: 0x%llX\n", (uint64_t)outputBuffer);
     
-    input[2] = (uint64_t)output;
+    input[2] = (uint64_t)outputBuffer;
     
     
     
@@ -114,6 +139,8 @@ int main(int argc, const char * argv[]) {
     
     fwrite(outputBuffer, 1, targetSize, stdout);
     fflush(stdout);
+    
+#endif
     
     return 0;
 }

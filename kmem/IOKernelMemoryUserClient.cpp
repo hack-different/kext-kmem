@@ -7,7 +7,11 @@
 
 #include "IOKernelMemoryUserClient.hpp"
 
-
+#if __LP64__
+extern struct mach_header_64 __dso_handle;
+#else
+extern struct mach_header __dso_handle;
+#endif
 
 #define super IOUserClient
 
@@ -17,6 +21,8 @@ OSDefineMetaClassAndStructors(IOKernelMemoryApetureUserClient, IOUserClient)
 const IOExternalMethodDispatch IOKernelMemoryApetureUserClient::s_methods[kIOKernelMemoryApetureMethodCount] = {
     {(IOExternalMethodAction)&IOKernelMemoryApetureUserClient::actionMethodReadVirtual, 3, 0, 8, 0},
     {(IOExternalMethodAction)&IOKernelMemoryApetureUserClient::actionMethodReadPhysical, 3, 0, 0, 0},
+    {(IOExternalMethodAction)&IOKernelMemoryApetureUserClient::actionMethodHeaderAddress, 0, 0, 1, 0},
+    {(IOExternalMethodAction)&IOKernelMemoryApetureUserClient::actionMethodCodeAddress, 0, 0, 1, 0},
 };
 
 bool IOKernelMemoryApetureUserClient::initWithTask(task_t owningTask, void *securityToken, UInt32 type, OSDictionary *properties) {
@@ -94,6 +100,33 @@ IOReturn IOKernelMemoryApetureUserClient::actionMethodReadPhysical(IOKernelMemor
     return target->methodReadPhysical(arguments);
 }
 
+IOReturn IOKernelMemoryApetureUserClient::actionMethodHeaderAddress(IOKernelMemoryApetureUserClient *target, void *reference,
+                                                  IOExternalMethodArguments *arguments) {
+    return target->methodHeaderAddress(arguments);
+}
+
+IOReturn IOKernelMemoryApetureUserClient::actionMethodCodeAddress(IOKernelMemoryApetureUserClient *target, void *reference,
+                                                  IOExternalMethodArguments *arguments) {
+    return target->methodCodeAddress(arguments);
+}
+
+IOReturn IOKernelMemoryApetureUserClient::methodHeaderAddress(IOExternalMethodArguments *arguments) {
+    IOLog("kmem: Executing 'IOKernelMemoryApetureUserClient::methodHeaderAddress()'.\n");
+    arguments->scalarOutput[0] = (uint64_t)&__dso_handle;
+    return kIOReturnSuccess;
+}
+
+__attribute__((noinline))
+static uint64_t get_code_addr(void) {
+    return (uint64_t)__builtin_return_address(0);
+}
+
+IOReturn IOKernelMemoryApetureUserClient::methodCodeAddress(IOExternalMethodArguments *arguments) {
+    IOLog("kmem: Executing 'IOKernelMemoryApetureUserClient::methodCodeAddress()'.\n");
+    arguments->scalarOutput[0] = get_code_addr();
+    return kIOReturnSuccess;
+}
+
 IOReturn IOKernelMemoryApetureUserClient::methodReadVirtual(IOExternalMethodArguments *arguments) {
     IOLog("kmem: Executing 'IOKernelMemoryApetureUserClient::methodReadVirtual()'.\n");
     
@@ -116,20 +149,23 @@ IOReturn IOKernelMemoryApetureUserClient::methodReadVirtual(IOExternalMethodArgu
         return kIOReturnVMError;
     }
     
-    arguments->scalarOutput[0] = kernelMapping->getAddress();
+//    arguments->scalarOutput[0] = kernelMapping->getAddress();
+    arguments->scalarOutput[0] = 0xdeadbeef;
     arguments->scalarOutput[1] = (int64_t)targetAddress;
     arguments->scalarOutput[2] = userBuffer->getPhysicalAddress();
     arguments->scalarOutput[3] = kernelMapping->getVirtualAddress();
     arguments->scalarOutput[4] = kernelMapping->getSize();
-    arguments->scalarOutput[5] = kernelMapping->getAddress();
-    memcpy(&arguments->scalarOutput[6], (void*)kernelMapping->GetAddress(), sizeof(uint64_t));
+//    arguments->scalarOutput[5] = kernelMapping->getAddress();
+    arguments->scalarOutput[5] = 0xbaadc0de;
+    memcpy(&arguments->scalarOutput[6], (void*)kernelMapping->getVirtualAddress(), sizeof(uint64_t));
     arguments->scalarOutput[7] = kernelMapping->getPhysicalAddress();
 
 
-    memset((void*)kernelMapping->getAddress(), 0x41, targetSize);
+//    memset((void*)userBuffer->getVirtualAddress(), 0x41, targetSize);
     //memcpy((void*)kernelMapping->getVirtualAddress(), &markerValue, sizeof(uint64_t));
     
-    //memcpy((void*)kernelMapping->getVirtualAddress(), targetAddress, targetSize);
+//    userBuffer->writeBytes(0, targetAddress, targetSize);
+    memcpy((void*)kernelMapping->getVirtualAddress(), targetAddress, targetSize);
     
     kernelMapping->unmap();
     OSSafeReleaseNULL(kernelMapping);
