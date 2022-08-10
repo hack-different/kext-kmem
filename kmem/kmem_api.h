@@ -17,6 +17,10 @@ extern const uint32_t kIOKernelMemoryApetureDefault;
 enum {
     kIOKernelMemoryApetureMethodReadVirtual,
     kIOKernelMemoryApetureMethodReadPhysical,
+//    kIOKernelMemoryApetureMethodWriteVirtual,
+//    kIOKernelMemoryApetureMethodWritePhysical,
+    kIOKernelMemoryApetureMethodGetKextHeaderAddress,
+    kIOKernelMemoryApetureMethodGetKextCodeAddress,
 
     kIOKernelMemoryApetureMethodCount
 };
